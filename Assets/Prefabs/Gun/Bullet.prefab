@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2188977757966068507}
   - component: {fileID: 2188977757966068504}
   - component: {fileID: 2188977757966068505}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Capsule
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -103,7 +103,7 @@ GameObject:
   - component: {fileID: 8060686912250126578}
   - component: {fileID: 1765757142316670286}
   - component: {fileID: 9132349138910800061}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Particle System
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4855,7 +4855,7 @@ GameObject:
   - component: {fileID: 8458689251496393665}
   - component: {fileID: 4614987167076554933}
   - component: {fileID: 4847838955774811153}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Bullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4906,5 +4906,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30e002976d0c6a6438f0a7b5f7a9c248, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocity: 50
+  force: 50
+  damage: 20
   rigidbody: {fileID: 4614987167076554933}
+  destroyEffect: {fileID: 283393908493103926, guid: 94864b8adb7e8c448ac5d599d4731e32,
+    type: 3}
