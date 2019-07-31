@@ -32,6 +32,9 @@ public class PlayerHealth : MonoBehaviour {
         Destroy(gameObject);
         Instantiate(playerRagdoll, transform.position, transform.rotation);
         uIManager.ShowGameOverUI();
+#if UNITY_STANDALONE_WIN
         Cursor.visible = true;
+#endif
+
     }
 }

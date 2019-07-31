@@ -5,7 +5,6 @@ using UnityEngine;
 public class Gun : MonoBehaviour {
 
     [SerializeField] private Transform bulletFirePosition;
-    //[SerializeField] private Bullet bulletPrefab;
     [SerializeField] private float fireRate = 0.6f;
 
     [SerializeField] private GameObject crosshair;
@@ -68,7 +67,6 @@ public class Gun : MonoBehaviour {
             soundManager.PlayerFire();
 
             // Fire a bullet
-            //Bullet bullet = Instantiate(bulletPrefab, bulletFirePosition.position, player.transform.rotation);
             GameObject bullet = pools.GetBullet();
             bullet.transform.position = bulletFirePosition.position;
             bullet.transform.rotation = bulletFirePosition.rotation;

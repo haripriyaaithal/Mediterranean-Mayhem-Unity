@@ -6,7 +6,7 @@ public class Bullet : MonoBehaviour {
     [SerializeField] private float force = 50f;
     [SerializeField] private float damage = 20f;
     [SerializeField] private Rigidbody rigidbody;
-    [SerializeField] GameObject destroyEffect;
+    [SerializeField] private GameObject destroyEffect;
 
     private Pools pools;
     private Vector3 initialPosition;

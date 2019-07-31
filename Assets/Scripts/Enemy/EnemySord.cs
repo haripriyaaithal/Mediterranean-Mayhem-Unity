@@ -19,7 +19,7 @@ public class EnemySord : MonoBehaviour {
     }
 
     private void OnTriggerEnter(Collider other) {
-        if (enemy.GetCanPlayAttackSound()) {
+        if (enemy.GetCanPlayAttackSound()) { // If the collision during attack
             if (other.gameObject.CompareTag("Player")) {
                 playerHealth.TakeDamage(damage);
                 soundManager.PlayEnemyAttack();

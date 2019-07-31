@@ -34,7 +34,7 @@ public class Player : MonoBehaviour {
     private const string IS_SHOOTING = "isShooting";
 
     private NavMeshAgent agent;
-    
+
     private string previousTrigger;
     private float x;
     private float z;
@@ -43,6 +43,7 @@ public class Player : MonoBehaviour {
         animator = GetComponent<Animator>();
         agent = GetComponent<NavMeshAgent>();
         crosshair = FindObjectOfType<Crosshair>();
+
         newPosition = Vector3.zero;
         movementDirection = Vector3.zero;
         lookAtObject = Vector3.forward;
@@ -97,7 +98,6 @@ public class Player : MonoBehaviour {
 
         if (x != 0f || z != 0f) {
             Debug.Log(newPosition);
-            //transform.position += newPosition.normalized * Time.deltaTime * movementSpeed;
             agent.SetDestination(transform.position + newPosition.normalized);
         }
 
@@ -119,7 +119,6 @@ public class Player : MonoBehaviour {
 
     private Vector3 GetPositionFromMousePoint() {
         Ray ray = Camera.main.ScreenPointToRay(crosshair.transform.position);
-
         RaycastHit hitInfo;
 
         if (Physics.Raycast(ray, out hitInfo)) {
@@ -129,10 +128,6 @@ public class Player : MonoBehaviour {
     }
 
     private void CheckDestinationReach(Vector3 targetPosition) {
-
-        Debug.DrawRay(transform.position, transform.position + targetPosition - transform.position, Color.red);
-        Debug.DrawRay(transform.position, GetPositionFromMousePoint() - transform.position, Color.green);
-
 #if UNITY_ANDROID
         if (Vector3.Distance(transform.position, transform.position + targetPosition) >= 0.3f) {
             AnimateMovement(newPosition + transform.position);

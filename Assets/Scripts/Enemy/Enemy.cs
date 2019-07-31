@@ -54,9 +54,10 @@ public class Enemy : MonoBehaviour {
 
                 CheckIfAttacking();
 
+                // If enemy is not near player for a long time, enemy speed will be increased
                 RageUp();
 
-
+                // If distance between player is less that 2.5 units, enemy will attack
                 if (agent.remainingDistance <= 2.5f) {
                     agent.speed = 0;
                     Attack();
@@ -79,6 +80,7 @@ public class Enemy : MonoBehaviour {
         agent.enabled = true;
 
         if (player != null) {
+            // Update destination for the enemy to player position
             agent.SetDestination(player.position);
 
         }
@@ -114,6 +116,7 @@ public class Enemy : MonoBehaviour {
         animator.SetBool("isAttacking", false);
     }
 
+    // Play attack sound only when the enemy is in attack animation and when the enemy hits the player
     public void CanPlaySound(int state) {
         if (state == 1) {
             canPlayAttackSound = true;
@@ -123,7 +126,7 @@ public class Enemy : MonoBehaviour {
     }
 
     private void Attack() {
-        sordCollider.enabled = true;
+        sordCollider.enabled = true;    // Collider will be disable to prevent unnecessary collissions 
         animator.SetBool("isAttacking", true);
     }
 

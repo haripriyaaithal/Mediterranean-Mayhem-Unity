@@ -21,7 +21,9 @@ public class EnemyHealth : MonoBehaviour {
     }
 
     public void TakeDamage(float amount) {
+        // Update UI
         healthBar.fillAmount = currentHealth / maxHealth;
+
         if (currentHealth >= amount) {
             currentHealth -= amount;
         } else {

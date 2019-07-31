@@ -11,7 +11,7 @@ public class EnemySpawner : MonoBehaviour {
     [SerializeField] private int enemyCount = 5;
     [SerializeField] private float spawnRadius = 6f;
     [SerializeField] private float spawnDelay = 3f;
-    [SerializeField] UIManager uIManager;
+    [SerializeField] private UIManager uIManager;
 
     private int currentNumberOfEnemies = 0;
     private WaitForSeconds waitForSeconds;
@@ -48,7 +48,6 @@ public class EnemySpawner : MonoBehaviour {
         }
 
     }
-
 
     private void DecreaseEnemyCount() {
         currentNumberOfEnemies--;

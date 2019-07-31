@@ -4,16 +4,12 @@ using UnityEngine;
 
 public class EnemyRagdoll : MonoBehaviour {
 
-    //private Pools pools;
     private WaitForSeconds waitForThreeSecond;
 
     private bool canRunCoroutine = false;
 
     // Start is called before the first frame update
     private void Start() {
-        /*if (pools == null) {
-            pools = FindObjectOfType<Pools>();
-        }*/
         if (waitForThreeSecond == null) {
             waitForThreeSecond = new WaitForSeconds(3f);
         }
@@ -24,19 +20,13 @@ public class EnemyRagdoll : MonoBehaviour {
 
     private void OnEnable() {
         if (canRunCoroutine) {
-            StartCoroutine(VanishWithAnimation());
+            StartCoroutine(VanishWithDelay());
         }
     }
 
 
-    private IEnumerator VanishWithAnimation() {
+    private IEnumerator VanishWithDelay() {
         yield return waitForThreeSecond;
-
-        /*gameObject.SetActive(false);
-        gameObject.transform.position = Vector3.zero;
-        gameObject.transform.rotation = Quaternion.identity;
-
-        pools.AddRagdollToPool(gameObject);*/
         Destroy(gameObject);
     }
 }
