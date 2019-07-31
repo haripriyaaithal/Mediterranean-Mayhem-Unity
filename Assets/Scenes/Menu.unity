@@ -751,7 +751,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a99bfdaa11a776142b99c08974f82575, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  aimingSlider: {fileID: 0}
+  aimingSlider: {fileID: 186205759}
 --- !u!1 &281854864
 GameObject:
   m_ObjectHideFlags: 0
@@ -2594,6 +2594,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4421a3da4797d574db2de04317fa5e46, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mobileSpecificUI: {fileID: 0}
 --- !u!4 &1798613488
 Transform:
   m_ObjectHideFlags: 0
